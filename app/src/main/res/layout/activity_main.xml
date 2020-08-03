@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#1c1c1b"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".MainActivity"
+    tools:ignore="ExtraText">
+
+    <com.app.aimatedprogresslib.AnimatedLoadingIndicator
+        android:layout_width="100dp"
+        android:visibility="gone"
+        android:id="@+id/lottie"
+        android:layout_height="100dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:elevation="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/materialCardView"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/moon" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.appcompat.widget.Toolbar>
+    <com.mancj.materialsearchbar.MaterialSearchBar
+        android:id="@+id/search_view"
+        app:mt_searchBarColor="@color/black"
+        app:mt_maxSuggestionsCount="0"
+
+        app:mt_hintColor="@color/white_ish"
+        app:mt_textColor="@color/white"
+        app:mt_searchIconTint="@color/white"
+        app:mt_backIconTint="@color/white"
+        app:mt_textCursorTint="@color/white"
+        app:mt_clearIconTint="@color/white"
+        android:layout_width="match_parent"
+        app:mt_hint="Enter City Name"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"  />
+
+
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/black"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_view"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="match_parent"
+                android:id="@+id/not_found"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+
+                android:visibility="gone"
+                app:lottie_rawRes="@raw/notfound"
+                android:layout_height="match_parent">
+
+            </com.airbnb.lottie.LottieAnimationView>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/icon"
+                    android:layout_width="101dp"
+                    android:layout_height="98dp"
+
+                    android:layout_above="@+id/countryCode"
+
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="190dp"
+                    android:layout_marginRight="190dp"
+                    android:layout_marginBottom="-14dp"
+                    android:layout_toStartOf="@+id/city_name"
+                    android:layout_toLeftOf="@+id/city_name" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/city_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="50dp"
+
+
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="......."
+
+                    android:textColor="@color/white"
+                    android:textSize="40sp">
+
+                </com.google.android.material.textview.MaterialTextView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/countryCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/city_name"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="43dp"
+                    android:layout_marginRight="43dp"
+
+                    android:layout_marginBottom="10dp"
+
+                    android:gravity="right"
+                    android:paddingBottom="10dp"
+                    android:text="........."
+                    android:textColor="@color/white"
+                    android:textSize="20sp">
+
+                </com.google.android.material.textview.MaterialTextView>
+            </RelativeLayout>
+
+            <com.diegodobelo.expandingview.ExpandingList
+                android:id="@+id/expanding_list_main"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
