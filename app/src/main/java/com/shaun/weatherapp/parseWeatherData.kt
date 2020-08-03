@@ -1,7 +1,6 @@
-package com.example.weatherapp
+package com.shaun.weatherapp
 
 import android.util.Log
-import androidx.lifecycle.MutableLiveData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch

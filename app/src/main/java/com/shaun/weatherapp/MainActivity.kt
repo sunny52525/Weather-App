@@ -1,23 +1,16 @@
-package com.example.weatherapp
+package com.shaun.weatherapp
 
 
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.view.View.*
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.diegodobelo.expandingview.ExpandingList
 import com.mancj.materialsearchbar.MaterialSearchBar
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 
 
 private const val link =

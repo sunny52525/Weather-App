@@ -1,4 +1,4 @@
-package com.example.weatherapp
+package com.shaun.weatherapp
 
 class WeatherData(
     var description: String,
